@@ -61,7 +61,7 @@ end
 
 
 def exportPng()
-	folders = UI.inputbox(["目录："])
+	folders = UI.inputbox(["模型目录："])
 	folder = folders[0]
 	folder = folder.gsub('\\', "/")
 
@@ -73,7 +73,7 @@ end
 
 sn = File.basename(__FILE__)
 unless file_loaded?(sn)
-   UI.menu("Plugins").add_item("export_png") { exportPng }
+   UI.menu("Plugins").add_item("批量导出缩略图") { exportPng }
    file_loaded(sn)
 end
 
