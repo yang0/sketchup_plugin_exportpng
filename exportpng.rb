@@ -1,4 +1,4 @@
-
+#作者：旺德福  137962@qq.com
 
 def extractPng(outFile)
 
