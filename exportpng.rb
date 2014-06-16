@@ -1,11 +1,14 @@
 #作者：旺德福  137962@qq.com
 
-def extractPng(outFile)
+def extractPng(inFile, width, height)
+	folder = File.dirname(inFile)
+	fileName = File.basename(inFile, ".skp")
+	outFile = "#{folder}/#{fileName}_#{width}X#{height}.png"
 
 	 keys = {
 	   :filename => outFile,
-	   :width => 640,
-	   :height => 480,
+	   :width => width,
+	   :height => height,
 	   :antialias => false,
 	   :compression => 0.9,
 	   :transparent => true
@@ -18,9 +21,7 @@ end
 
 def skp2png(inFile)
 	result = true
-	folder = File.dirname(inFile)
-	fileName = File.basename(inFile, ".skp")
-	outFile = "#{folder}/#{fileName}.png"
+
 
 
 	result = Sketchup.open_file(inFile)
@@ -30,7 +31,8 @@ def skp2png(inFile)
 	#model = Sketchup.active_model
 	#result = model.import inFile, true
 	if result
-		extractPng(outFile)
+		extractPng(inFile, 640, 480)
+		extractPng(inFile, 200, 200)
 	end
 	#Sketchup.quit
  	#status = model.close_active
