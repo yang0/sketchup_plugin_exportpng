@@ -31,8 +31,8 @@ def skp2png(inFile)
 	#model = Sketchup.active_model
 	#result = model.import inFile, true
 	if result
-		extractPng(inFile, 640, 480)
-		extractPng(inFile, 200, 200)
+		extractPng(inFile, 1280, 800)
+		extractPng(inFile, 1000, 1000)
 	end
 	#Sketchup.quit
  	#status = model.close_active
