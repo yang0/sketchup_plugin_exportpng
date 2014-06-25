@@ -3,7 +3,7 @@
 def extractPng(inFile, width, height)
 	folder = File.dirname(inFile)
 	fileName = File.basename(inFile, ".skp")
-	outFile = "#{folder}/#{fileName}_#{width}X#{height}.png"
+	outFile = "#{folder}/#{fileName}_#{width}X#{height}.jpeg"
 
 	 keys = {
 	   :filename => outFile,
